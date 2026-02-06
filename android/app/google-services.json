@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "913817189786",
+    "project_id": "slice-6b083",
+    "storage_bucket": "slice-6b083.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913817189786:android:746fd916d49758f563ce23",
+        "android_client_info": {
+          "package_name": "com.example.slice_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkpFKWqZfCDUKYqjJYRaVN-RUqPlbnceM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
