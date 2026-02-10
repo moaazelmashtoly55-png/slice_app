@@ -3,7 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:slice_app/core/theme/app_color.dart';
-import 'package:slice_app/feature/product_details/presentation/ui/product_details.dart';
+import 'package:slice_app/feature/menu/screens/menu_screen.dart';
 
 class HomeItems extends StatelessWidget {
   const HomeItems({super.key});
@@ -12,7 +12,7 @@ class HomeItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
        onTap: () {
-          Navigator.push(context,MaterialPageRoute(builder: (context) =>ProductDetails()  ),
+          Navigator.push(context,MaterialPageRoute(builder: (context) =>MenuScreen()  ),
               );
               },
       
@@ -34,10 +34,13 @@ class HomeItems extends StatelessWidget {
           child: Column(
           children: [
              
-                 Image.network("https://tse4.mm.bing.net/th/id/OIP.SEfXqwWqK1NNMpH9ZmNrgwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
-                width: 120,
-                height: 100,
-                ),
+                 ClipRRect(
+                  borderRadius: BorderRadiusGeometry.circular(20),
+                   child: Image.network("https://tse4.mm.bing.net/th/id/OIP.SEfXqwWqK1NNMpH9ZmNrgwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
+                                   width: 120,
+                                   height: 100,
+                                   ),
+                 ),
               
 
               SizedBox(height: 10,),
@@ -55,7 +58,7 @@ class HomeItems extends StatelessWidget {
                 children: [
                   InkWell(
                      onTap: () {
-                          Navigator.push(context,MaterialPageRoute(builder: (context) =>ProductDetails()  ),
+                          Navigator.push(context,MaterialPageRoute(builder: (context) =>MenuScreen()  ),
                       );
                       },
                     child: Container(
@@ -79,8 +82,9 @@ class HomeItems extends StatelessWidget {
                       
                     ),
                   ),
-                  Text("125.0 ",
+                  Text("125 L.E ",
                           style: TextStyle(
+                            color: Colors.redAccent,
                             fontSize: 15,
                             fontWeight: FontWeight.bold),
               )

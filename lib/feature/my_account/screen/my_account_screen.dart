@@ -9,13 +9,20 @@ class MyAccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "My Account",),
+      appBar: CustomAppBar(title: "My Account"),
       body: Column(
         children: [
-          ElevatedButton(onPressed: (){
-            LocalServices.prefs?.remove("userToken");
-            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>SplashScreen()), (e)=>false);
-          }, child: Text("logout"))
+          ElevatedButton(
+            onPressed: () {
+              LocalServices.prefs?.remove("userToken");
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => SplashScreen()),
+                (e) => false,
+              );
+            },
+            child: Text("logout"),
+          ),
         ],
       ),
     );

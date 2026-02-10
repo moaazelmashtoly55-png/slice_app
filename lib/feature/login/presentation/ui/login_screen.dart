@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
               Image.asset("assets/images/splash1.png", width: 220),
               Text(
                 "If you taste it once, you’ll never forget it",
-                style: TextStyle(fontSize: 15, color: AppColor.primary),
+                style: TextStyle(fontSize: 15, color: AppColor.primary,),
                 textAlign: TextAlign.center,
               ),
 

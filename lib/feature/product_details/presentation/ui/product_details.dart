@@ -2,11 +2,14 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:slice_app/core/model/product_model.dart';
 import 'package:slice_app/core/theme/app_color.dart';
 import 'package:slice_app/core/widget/custom_app_bar.dart';
+import 'package:slice_app/feature/cart/screen/cart_screen.dart';
 
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({super.key});
+  final ProductModel product;
+  const ProductDetails({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +44,7 @@ class ProductDetails extends StatelessWidget {
 
                     child: Center(child: ClipRRect(
                       borderRadius: BorderRadiusGeometry.circular(150),
-                      child: Image.network("https://tse4.mm.bing.net/th/id/OIP.SEfXqwWqK1NNMpH9ZmNrgwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
+                      child: Image.network(product.imgurl,
                       height: 180,)
                       ),
                       )
@@ -50,13 +53,13 @@ class ProductDetails extends StatelessWidget {
               ),
             ),
             SizedBox(height: 60,),
-            Text("Chicken Ranch Pizza",style: TextStyle(
+            Text(product.name,style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold
             ),),
 
              SizedBox(height: 20,),
-            Text("A creamy ranch-based pizza topped with juicy chicken and melted mozzarella.",style: TextStyle(
+            Text(product.details,style: TextStyle(
               fontSize: 15,
               
             ),),
@@ -65,7 +68,7 @@ class ProductDetails extends StatelessWidget {
               children: [
                 InkWell(
                    onTap: () {
-                        Navigator.push(context,MaterialPageRoute(builder: (context) =>ProductDetails()  ),
+                        Navigator.push(context,MaterialPageRoute(builder: (context) =>CartScreen()  ),
                     );
                     },
                   child: Container(
@@ -88,7 +91,7 @@ class ProductDetails extends StatelessWidget {
                     
                   ),
                 ),
-                Text("125.0 ",
+                Text("${product.price} L.E",
             style: TextStyle(fontSize: 30,
             fontWeight: FontWeight.bold),
             )

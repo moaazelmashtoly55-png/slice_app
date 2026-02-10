@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:slice_app/core/nerwork/baseurl.dart';
-import 'package:slice_app/core/nerwork/cutome_exeptions.dart';
+import 'package:slice_app/core/nerwork/custom_exeptions.dart';
 
 class DioHelper {
   static late Dio dio;
