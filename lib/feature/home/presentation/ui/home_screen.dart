@@ -65,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(height: 30),
                 HomeTextAlign(title: "- Slice Inventions ❤🤫"),
                 SizedBox(height: 10),
-                HomeListVeiwItem(),
+                
                 SizedBox(height: 30),
               ],
             ),

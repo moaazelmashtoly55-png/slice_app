@@ -2,17 +2,19 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:slice_app/core/model/product_model.dart';
 import 'package:slice_app/core/theme/app_color.dart';
-import 'package:slice_app/feature/menu/screens/menu_screen.dart';
+import 'package:slice_app/feature/product_details/presentation/ui/product_details.dart';
 
 class HomeItems extends StatelessWidget {
-  const HomeItems({super.key});
+final ProductModel product;
+  const HomeItems({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
        onTap: () {
-          Navigator.push(context,MaterialPageRoute(builder: (context) =>MenuScreen()  ),
+          Navigator.push(context,MaterialPageRoute(builder: (context) =>ProductDetails(product: product) ),
               );
               },
       
@@ -36,7 +38,7 @@ class HomeItems extends StatelessWidget {
              
                  ClipRRect(
                   borderRadius: BorderRadiusGeometry.circular(20),
-                   child: Image.network("https://tse4.mm.bing.net/th/id/OIP.SEfXqwWqK1NNMpH9ZmNrgwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
+                   child: Image.network(product.imgurl,
                                    width: 120,
                                    height: 100,
                                    ),
@@ -46,7 +48,7 @@ class HomeItems extends StatelessWidget {
               SizedBox(height: 10,),
 
              Align(alignment: AlignmentGeometry.centerLeft,
-              child: Text(" Chicken Ranch",
+              child: Text(product.name,
               style: TextStyle(fontSize: 15,
               fontWeight: FontWeight.bold),
               )
@@ -58,7 +60,7 @@ class HomeItems extends StatelessWidget {
                 children: [
                   InkWell(
                      onTap: () {
-                          Navigator.push(context,MaterialPageRoute(builder: (context) =>MenuScreen()  ),
+                          Navigator.push(context,MaterialPageRoute(builder: (context) =>ProductDetails(product: product)  ),
                       );
                       },
                     child: Container(
@@ -82,7 +84,7 @@ class HomeItems extends StatelessWidget {
                       
                     ),
                   ),
-                  Text("125 L.E ",
+                  Text("${product.price} L.E ",
                           style: TextStyle(
                             color: Colors.redAccent,
                             fontSize: 15,
